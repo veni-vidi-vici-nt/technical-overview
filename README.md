@@ -1,7 +1,12 @@
 # technical-overview
 
-### Languages Used:
+## Languages Used:
 
 - 🟢 Golang
 
-blah blahblkagh
+## Algorithms
+
+### two pointers
+
+[ip] 1 two sum
+[ip] 167 two sum 2
