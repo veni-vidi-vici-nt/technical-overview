@@ -1,6 +1,7 @@
-package two_sum
+package q0001_two_sum_e
 
 import (
+	"reflect"
 	"testing"
 )
 
@@ -17,7 +18,7 @@ func TestTwoSum(t *testing.T) {
 
 	for _, tt := range tests {
 		got := TwoSum(tt.nums, tt.target)
-		if (got[0] != tt.want[0] || got[1] != tt.want[1]) && (got[1] != tt.want[0] || got[0] != tt.want[1]) {
+		if !reflect.DeepEqual(got, tt.want) && !reflect.DeepEqual([]int{got[1], got[0]}, tt.want) {
 			t.Errorf("TwoSum(%v, %d) = %v; want %v", tt.nums, tt.target, got, tt.want)
 		}
 	}

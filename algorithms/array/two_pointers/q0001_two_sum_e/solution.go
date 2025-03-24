@@ -1,13 +1,4 @@
-package two_sum
-
-import "fmt"
-
-// https://leetcode.com/problems/two-sum/description/
-func main() {
-	fmt.Println("Pattern: two pointers")
-	fmt.Println("Question: two sum 0001 e")
-
-}
+package q0001_two_sum_e
 
 // TwoSum returns the indices of the two numbers that add up to the target.
 func TwoSum(nums []int, target int) []int {

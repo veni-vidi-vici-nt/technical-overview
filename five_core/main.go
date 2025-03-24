@@ -8,10 +8,6 @@ func main() {
 	fmt.Println("[Five Core Questions]")
 	pattern_two_pointers_intro()
 
-	fmt.Println("[Current Workspace]")
-	result := two_sum.TwoSum([]int{2, 7, 11, 15}, 9)
-	fmt.Println(result) // Expected output: [0, 1]
-
 }
 
 func pattern_two_pointers_intro() {
