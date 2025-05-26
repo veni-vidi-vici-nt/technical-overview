@@ -4,27 +4,32 @@ import (
 	"fmt"
 )
 
-func Pattern_two_pointers_intro() {
-	fmt.Println("~ Pattern: Two Pointers Intro")
+func Two_pointers_intro() {
+	fmt.Println("~ Set: Two Pointers Intro")
 	// WHEN? Searching for a pair+ of items based on some REQ
 
-	// Two Sum
+	// Test Input
 	input1 := []int{1, 3, 4, 6, 8, 10, 13}
 
+	fmt.Println("f(x) two_sum")
+	// Case: invalid array length
 	fmt.Println(two_sum([]int{1}, 13))
+	// Case: Valid
 	fmt.Println(two_sum(input1, 13))
 	fmt.Println(two_sum(input1, 4))
-	fmt.Println("-----")
+
+	fmt.Println("f(x) two_sum_unsorted")
+	// Case: invalid array length
 	fmt.Println(two_sum_unsorted([]int{1}, 13))
+	// Case: Valid
 	fmt.Println(two_sum_unsorted(input1, 13))
 	fmt.Println(two_sum_unsorted(input1, 4))
-
 }
 
 func two_sum(input_array []int, target int) []int {
 	// Baseline
 	if len(input_array) < 2 {
-		return []int{0, 0}
+		return []int{-1, -1}
 	}
 
 	// #BruteForce
@@ -57,7 +62,7 @@ func two_sum(input_array []int, target int) []int {
 	}
 	// BigO: O(n)
 
-	return []int{0, 0}
+	return []int{-1, -1}
 }
 
 func two_sum_unsorted(input_array []int, target int) []int {

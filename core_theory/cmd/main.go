@@ -7,5 +7,5 @@ import (
 
 func main() {
 	fmt.Println("[Core Theory]")
-	core_theory.Pattern_two_pointers_intro()
+	core_theory.Two_pointers_intro()
 }
