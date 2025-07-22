@@ -2,6 +2,7 @@ package core_theory
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func Two_pointers_intro() {
@@ -88,14 +89,55 @@ func two_sum_unsorted(input_array []int, target int) []int {
 	return []int{0, 0}
 }
 
+// TODO
 func three_sum() {
 	// Pattern: Two Pointer
 
 }
 
-func longest_substring_without_repeat() {
-	// Pattern: Sliding Window
+func Sliding_window_intro() {
+	fmt.Println("~ Set: Sliding Window intro")
 
+	// WHEN? Expand/Contract window to maintain a valid condition
+
+	// Test Input
+	input1 := "abcabcbb"
+
+	fmt.Println("f(x) longest_substring_without_repeat")
+	fmt.Println(longest_substring_without_repeat(input1))
+}
+
+func longest_substring_without_repeat(input string) int {
+	// #Brute Force
+	/*
+		Looking at each index and moving forward, calculating max where all character is unique
+		Use Set to check unique
+		Time: O(n^3) because nested loop and checking
+		Space: constant
+	*/
+
+	maxLen := 0
+	fmt.Println(input)
+
+	for i := 0; i < len(input); i++ {
+		fmt.Println("- " + string(input[i]))
+		seen := make(map[byte]bool)
+		for j := i; j < len(input); j++ {
+			fmt.Println("looking at j:" + string(input[j]))
+			if seen[input[j]] {
+				fmt.Println("break")
+				break
+			}
+
+			seen[input[j]] = true
+			if j-i+1 > maxLen {
+				maxLen = j - i + 1
+				fmt.Println("IMPT: Updating maxLen - " + strconv.Itoa(maxLen))
+				// fmt.Printf("IMPT: Updating maxLen - %d \n", maxLen)
+			}
+		}
+	}
+	return maxLen
 }
 
 func diameter_of_binary_tree() {
