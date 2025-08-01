@@ -1,17 +1,19 @@
 # technical-overview
 
+Purpose is to serve as a reference.
+
 ## instructions
 
-- Running sub-section: $/cmd/go run main.go
+- Running sub-section code: $/cmd/go run main.go
 - Running sub-section tests: $ go test
-
-## Core Theory
-
-Sets of core questions that cover a range of patterns.
 
 ## Algorithms
 
 ### two pointers (Array)
 
-[ip] 1 two sum
-[ip] 167 two sum ii
+[fix] 1 two sum
+[] 167 two sum ii
+
+## Core Theory
+
+[ip] Two Pointers

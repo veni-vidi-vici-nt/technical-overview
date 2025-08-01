@@ -7,7 +7,7 @@ import (
 
 func main() {
 	fmt.Println("[Core Theory]")
-	// core_theory.Two_pointers_intro()
-	core_theory.Sliding_window_intro()
+	core_theory.Two_Pointers_Intro()
+	// core_theory.Sliding_window_intro()
 
 }

@@ -5,9 +5,9 @@ import (
 	"strconv"
 )
 
-func Two_pointers_intro() {
-	fmt.Println("~ Set: Two Pointers Intro")
-	// WHEN? Searching for a pair+ of items based on some REQ
+func Two_Pointers_Intro() {
+	fmt.Println("~ Two Pointers Intro")
+	// Scenario: Searching for a pair+ of items based on some REQ
 
 	// Test Input
 	input1 := []int{1, 3, 4, 6, 8, 10, 13}
@@ -18,6 +18,7 @@ func Two_pointers_intro() {
 	// Case: Valid
 	fmt.Println(two_sum(input1, 13))
 	fmt.Println(two_sum(input1, 4))
+	fmt.Println(two_sum(input1, 18))
 
 	fmt.Println("f(x) two_sum_unsorted")
 	// Case: invalid array length
@@ -28,10 +29,44 @@ func Two_pointers_intro() {
 }
 
 func two_sum(input_array []int, target int) []int {
+	/*
+		# RE (Read)
+		Thoughts:
+			Simple problem
+
+		Scope:
+			Will our input array ever be empty?
+			Will we be dealing with +/- values?
+			What output is preferred when there is no result?
+	*/
+
 	// Baseline
 	if len(input_array) < 2 {
-		return []int{-1, -1}
+		return nil
 	}
+
+	/*
+		# P (Plan)
+		Brute:
+			"Double For Loop"; Looking at all potential pairs to satisfy target.
+			BigO - N^2
+			Space - n/a
+			// Not Scalable
+
+		Iterative:
+			"Two Pointers"; Since the array is sorted, conditionally converge
+			Big0 - N
+			Space - n/a
+
+			"Hashmap"; Utilize Hashmap for single iteration.
+			Big0 - N
+			Space - N
+			@ f(x) two_sum_unsorted
+	*/
+
+	/*
+		# E (Execute Brute)
+	*/
 
 	// #BruteForce
 	// for i := 0; i < len(input_array); i++ { // Look at each
@@ -43,7 +78,11 @@ func two_sum(input_array []int, target int) []int {
 	// }
 	// BigO: O(n^2)
 
-	// #Efficient
+	/*
+		# E (Execute Iterative)
+	*/
+
+	// #Iterative
 	left_pointer := 0                     // p* @ start
 	right_pointer := len(input_array) - 1 // p* @ end
 
@@ -64,6 +103,19 @@ func two_sum(input_array []int, target int) []int {
 	// BigO: O(n)
 
 	return []int{-1, -1}
+
+	/*
+		# R (Retro)
+		Unit Tests:
+			@ TestTwoSum
+			@ TestTwoSumUnsorted
+
+		Conclusion:
+			Simple problem
+			Brute -> double loop
+			Iterative -> Two Pointers or Hashmap depending on specifications
+
+	*/
 }
 
 func two_sum_unsorted(input_array []int, target int) []int {
@@ -84,7 +136,6 @@ func two_sum_unsorted(input_array []int, target int) []int {
 
 		seen[item] = i
 	}
-	// BigO: O(n), Space: O(n)
 
 	return []int{0, 0}
 }
